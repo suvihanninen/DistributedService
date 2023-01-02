@@ -1,0 +1,31 @@
+
+syntax = "proto3";
+
+package interface;
+option go_package = "https://github.com/suvihanninen/DistributedService.git;interface";
+
+
+service DistService {
+    rpc Get (GetRequest) returns (GetResponse) {}
+    rpc Update(UpdateRequest)returns (UpdateResponse){}
+    
+}
+
+message GetRequest {
+   
+}
+
+message GetResponse {
+    int32 value = 1;
+   
+}
+
+message UpdateRequest {
+    int32 value = 1;
+    
+}
+
+message UpdateResponse {
+    string ack = 1; //success, failed
+   
+}
